@@ -78,8 +78,8 @@
 
   <script>var submitted = false;</script>
   <iframe name="Hiddenconfirm" style="display:none;"
-    onload="if(submitted){window.location='submission.html';}">
-  </iframe>
+  onload="if(submitted && !window.location.href.includes('submission.html')) { window.location='submission.html'; }">
+</iframe>
 
   <form
     action="https://docs.google.com/forms/d/e/1FAIpQLSdkZai1mm6Eb5aQ4lPvn4P_RpY69TZdOdEfVQskRKrJP9lzEw/formResponse"
@@ -147,3 +147,4 @@
 
 </body>
 </html>
+
