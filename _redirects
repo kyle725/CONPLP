@@ -1,9 +1,9 @@
 # Serve index.html for root
-/    /index.html   200
+/    /demo5.html   200
 
 # Serve submission.html directly for the form iframe
 /submission.html    /submission.html   200
 
 # Catch-all fallback (optional)
 # Useful if you add client-side routing later
-/*    /index.html   200
+/*    /demo5.html   200
