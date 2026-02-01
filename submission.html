@@ -3,13 +3,9 @@
 <head>
   <meta charset="utf-8">
   <title>Submission Successful</title>
-
-  <!-- Pixel font -->
   <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
-
   <style>
     * { box-sizing: border-box; }
-
     body {
       margin: 0;
       min-height: 100vh;
@@ -18,50 +14,50 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 15px;
+      padding: 10px;
     }
 
     .card {
       background: rgba(255,255,255,0.35);
-      padding: 40px;
-      width: 400px;
+      padding: 50px;
+      width: 500px;
       max-width: 95%;
       text-align: center;
       border-radius: 20px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.2);
       animation: popIn 0.8s ease-out forwards;
     }
 
     h2 {
       color: #b30059;
-      font-size: 32px;
-      margin-bottom: 12px;
+      font-size: 42px;
+      margin-bottom: 16px;
     }
 
     p {
       color: #5c0033;
-      font-size: 20px;
-      margin: 8px 0;
+      font-size: 24px;
+      margin: 10px 0;
     }
 
     .timer {
-      margin-top: 18px;
+      margin-top: 20px;
       font-weight: bold;
       color: #ff4d94;
-      font-size: 22px;
+      font-size: 28px;
       animation: floaty 3s ease-in-out infinite;
     }
 
     button {
-      margin-top: 24px;
+      margin-top: 28px;
       background: #ff8fd6;
       color: #000;
       border: none;
-      padding: 14px 32px;
+      padding: 18px 36px;
       border-radius: 999px;
       cursor: pointer;
       font-family: 'VT323', monospace;
-      font-size: 22px;
+      font-size: 26px;
       width: 100%;
       max-width: 100%;
       transition: background 0.3s;
@@ -77,37 +73,36 @@
     }
 
     @keyframes floaty {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-4px); }
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
     }
 
-    /* ===== MEDIA QUERIES ===== */
+    /* MOBILE-FIRST MEDIA QUERIES */
     @media (max-width: 900px) {
-      .card { padding: 35px; width: 420px; max-width: 90%; }
-      h2 { font-size: 34px; }
-      p { font-size: 22px; }
-      .timer { font-size: 24px; }
-      button { font-size: 22px; padding: 14px 28px; }
+      .card { padding: 45px; width: 90%; }
+      h2 { font-size: 48px; }
+      p { font-size: 26px; }
+      .timer { font-size: 30px; }
+      button { font-size: 28px; padding: 20px 32px; }
     }
 
     @media (max-width: 600px) {
-      .card { padding: 35px; width: 95%; }
-      h2 { font-size: 36px; }
-      p { font-size: 24px; }
-      .timer { font-size: 26px; }
-      button { font-size: 24px; padding: 16px 28px; }
+      .card { padding: 40px; width: 95%; }
+      h2 { font-size: 52px; }
+      p { font-size: 28px; }
+      .timer { font-size: 34px; }
+      button { font-size: 30px; padding: 22px 32px; }
     }
 
     @media (max-width: 420px) {
-      .card { padding: 30px; }
-      h2 { font-size: 32px; }
-      p { font-size: 22px; }
-      .timer { font-size: 24px; }
-      button { font-size: 22px; padding: 14px 20px; }
+      .card { padding: 35px; width: 98%; }
+      h2 { font-size: 56px; }
+      p { font-size: 30px; }
+      .timer { font-size: 36px; }
+      button { font-size: 32px; padding: 24px 32px; }
     }
   </style>
 </head>
-
 <body>
 
   <div class="card">
@@ -131,7 +126,6 @@
     const timer = setInterval(() => {
       timeLeft--;
       countdown.textContent = timeLeft;
-
       if (timeLeft === 0) {
         clearInterval(timer);
         window.location.href = "demo5.html";
