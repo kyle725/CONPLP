@@ -17,9 +17,39 @@
 body {
   margin: 0;
   font-family: 'VT323', monospace;
+  background: linear-gradient(180deg, #f5a6df, #ffb2b2);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
   min-height: 100vh;
-  overflow-x: hidden;  /* prevent horizontal scroll */
-  overflow-y: auto;    /* allow vertical scroll */
+  padding: 10px;
+  overflow-y: auto; /* allow body scroll */
+}
+
+.card {
+  background: rgba(255,255,255,0.35);
+  padding: 40px 20px;
+  width: 100%;
+  max-width: 500px;
+  text-align: center;
+  border-radius: 20px;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.25);
+  animation: popIn 0.8s ease-out forwards;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* allow scroll */
+  max-height: 95vh; /* don't exceed viewport */
+  overflow-y: auto; /* scroll inside card if needed */
+}
+
+textarea {
+  border-radius: 16px;
+  resize: none;
+  height: 150px; /* taller textarea */
+  font-size: 20px;
+  padding: 12px;
+  overflow-y: auto; /* scroll inside textarea */
 }
 
 /* ===== BACKGROUND ===== */
@@ -267,6 +297,7 @@ button:hover { background: #ff6cc8; }
 
 </body>
 </html>
+
 
 
 
