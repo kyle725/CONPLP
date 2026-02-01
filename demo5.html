@@ -52,12 +52,33 @@ textarea {
   overflow-y: auto; /* scroll inside textarea */
 }
 
-/* ===== BACKGROUND ===== */
-.bg-slideshow { position: fixed; inset: 0; z-index: -3; }
-.bg-slide { position: absolute; inset: 0; background-size: cover; background-position: center; opacity: 0; transition: opacity 2s ease-in-out; filter: brightness(0.85) saturate(0.9); }
-.bg-slide.active { opacity: 1; }
+/* ===== BACKGROUND SLIDESHOW ===== */
+.bg-slideshow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; /* full height of viewport */
+  min-height: 100vh; /* ensure at least full screen */
+  z-index: -3;
+}
 
-.overlay { position: fixed; inset: 0; z-index: -2; background: linear-gradient(to bottom, rgba(255,240,248,0.9) 0%, rgba(255,200,220,0.75) 35%, rgba(255,178,178,0.55) 65%, rgba(255,178,178,0.0) 100%); }
+.bg-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 2s ease-in-out;
+  filter: brightness(0.85) saturate(0.9);
+}
+
+.bg-slide.active {
+  opacity: 1;
+}
 
 /* ===== CONTAINER ===== */
 .container {
@@ -89,7 +110,7 @@ textarea {
 }
 
 .con { color: #ff00b9; }
-.sult { color: #ff7676; }
+.sult { color: #ffffff; }
 
 @keyframes popIn { from { transform: scale(0.6); opacity: 0; } to { transform: scale(1); opacity: 1; } }
 @keyframes floaty { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-4px); } }
@@ -297,6 +318,7 @@ button:hover { background: #ff6cc8; }
 
 </body>
 </html>
+
 
 
 
