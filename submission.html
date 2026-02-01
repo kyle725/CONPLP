@@ -23,9 +23,9 @@
 
     .card {
       background: rgba(255,255,255,0.35);
-      padding: 30px;
-      width: 360px;
-      max-width: 100%;
+      padding: 40px;
+      width: 400px;
+      max-width: 95%;
       text-align: center;
       border-radius: 20px;
       box-shadow: 0 10px 25px rgba(0,0,0,0.15);
@@ -34,34 +34,36 @@
 
     h2 {
       color: #b30059;
-      font-size: 28px;
-      margin-bottom: 8px;
+      font-size: 32px;
+      margin-bottom: 12px;
     }
 
     p {
       color: #5c0033;
-      font-size: 18px;
-      margin: 6px 0;
+      font-size: 20px;
+      margin: 8px 0;
     }
 
     .timer {
-      margin-top: 14px;
+      margin-top: 18px;
       font-weight: bold;
       color: #ff4d94;
-      font-size: 20px;
+      font-size: 22px;
       animation: floaty 3s ease-in-out infinite;
     }
 
     button {
-      margin-top: 18px;
+      margin-top: 24px;
       background: #ff8fd6;
       color: #000;
       border: none;
-      padding: 12px 28px;
+      padding: 14px 32px;
       border-radius: 999px;
       cursor: pointer;
       font-family: 'VT323', monospace;
-      font-size: 20px;
+      font-size: 22px;
+      width: 100%;
+      max-width: 100%;
       transition: background 0.3s;
     }
 
@@ -80,21 +82,28 @@
     }
 
     /* ===== MEDIA QUERIES ===== */
-    @media (max-width: 600px) {
-      .card {
-        padding: 25px;
-      }
-      h2 { font-size: 24px; }
-      p { font-size: 16px; }
-      .timer { font-size: 18px; }
-      button { font-size: 18px; padding: 12px 20px; width: 100%; }
+    @media (max-width: 900px) {
+      .card { padding: 35px; width: 420px; max-width: 90%; }
+      h2 { font-size: 34px; }
+      p { font-size: 22px; }
+      .timer { font-size: 24px; }
+      button { font-size: 22px; padding: 14px 28px; }
     }
 
-    @media (max-width: 400px) {
-      h2 { font-size: 22px; }
-      p { font-size: 15px; }
-      .timer { font-size: 16px; }
-      button { font-size: 16px; padding: 10px 16px; }
+    @media (max-width: 600px) {
+      .card { padding: 35px; width: 95%; }
+      h2 { font-size: 36px; }
+      p { font-size: 24px; }
+      .timer { font-size: 26px; }
+      button { font-size: 24px; padding: 16px 28px; }
+    }
+
+    @media (max-width: 420px) {
+      .card { padding: 30px; }
+      h2 { font-size: 32px; }
+      p { font-size: 22px; }
+      .timer { font-size: 24px; }
+      button { font-size: 22px; padding: 14px 20px; }
     }
   </style>
 </head>
