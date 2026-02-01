@@ -2,29 +2,36 @@
 <html>
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Submission Successful</title>
   <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
   <style>
     * { box-sizing: border-box; }
+
     body {
       margin: 0;
-      min-height: 100vh;
       font-family: 'VT323', monospace;
       background: linear-gradient(180deg, #f5a6df, #ffb2b2);
       display: flex;
-      align-items: center;
       justify-content: center;
+      align-items: flex-start; /* allow scroll if content overflows */
+      min-height: 100vh;
+      padding: 20px; /* small gaps on sides */
+      overflow-y: auto; /* enable vertical scroll */
     }
 
     .card {
       background: rgba(255,255,255,0.35);
       padding: 60px 40px;
-      width: 500px;
-      max-width: 95%;
+      width: 100%;
+      max-width: 500px;
       text-align: center;
       border-radius: 20px;
       box-shadow: 0 15px 30px rgba(0,0,0,0.25);
       animation: popIn 0.8s ease-out forwards;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
 
     h2 {
@@ -58,7 +65,6 @@
       font-family: 'VT323', monospace;
       font-size: 32px;
       width: 100%;
-      max-width: 100%;
       transition: background 0.3s;
     }
 
@@ -67,9 +73,9 @@
     @keyframes popIn { 0% { transform: scale(0.7); opacity: 0; } 100% { transform: scale(1); opacity: 1; } }
     @keyframes floaty { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
 
-    /* MOBILE-FIRST MEDIA QUERIES */
+    /* ===== MOBILE-FIRST MEDIA QUERIES ===== */
     @media (max-width: 900px) {
-      .card { width: 90%; padding: 50px 30px; border-radius: 15px; }
+      .card { padding: 50px 30px; border-radius: 15px; }
       h2 { font-size: 56px; }
       p { font-size: 32px; }
       .timer { font-size: 40px; }
@@ -77,7 +83,8 @@
     }
 
     @media (max-width: 600px) {
-      .card { width: 100%; padding: 60px 20px; border-radius: 0; border-radius: 0; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; }
+      body { padding: 10px; }
+      .card { padding: 50px 20px; border-radius: 15px; }
       h2 { font-size: 64px; }
       p { font-size: 36px; }
       .timer { font-size: 46px; }
@@ -85,10 +92,11 @@
     }
 
     @media (max-width: 420px) {
+      .card { padding: 40px 15px; border-radius: 12px; }
       h2 { font-size: 70px; }
       p { font-size: 40px; }
       .timer { font-size: 50px; }
-      button { font-size: 44px; padding: 32px 20px; }
+      button { font-size: 44px; padding: 32px 15px; }
     }
   </style>
 </head>
