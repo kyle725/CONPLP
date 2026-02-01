@@ -8,9 +8,7 @@
   <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
 
   <style>
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
@@ -20,12 +18,14 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      padding: 15px;
     }
 
     .card {
       background: rgba(255,255,255,0.35);
       padding: 30px;
       width: 360px;
+      max-width: 100%;
       text-align: center;
       border-radius: 20px;
       box-shadow: 0 10px 25px rgba(0,0,0,0.15);
@@ -57,11 +57,12 @@
       background: #ff8fd6;
       color: #000;
       border: none;
-      padding: 10px 26px;
+      padding: 12px 28px;
       border-radius: 999px;
       cursor: pointer;
       font-family: 'VT323', monospace;
       font-size: 20px;
+      transition: background 0.3s;
     }
 
     button:hover {
@@ -69,19 +70,31 @@
     }
 
     @keyframes popIn {
-      0% {
-        transform: scale(0.7);
-        opacity: 0;
-      }
-      100% {
-        transform: scale(1);
-        opacity: 1;
-      }
+      0% { transform: scale(0.7); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
     }
 
     @keyframes floaty {
       0%, 100% { transform: translateY(0); }
       50% { transform: translateY(-4px); }
+    }
+
+    /* ===== MEDIA QUERIES ===== */
+    @media (max-width: 600px) {
+      .card {
+        padding: 25px;
+      }
+      h2 { font-size: 24px; }
+      p { font-size: 16px; }
+      .timer { font-size: 18px; }
+      button { font-size: 18px; padding: 12px 20px; width: 100%; }
+    }
+
+    @media (max-width: 400px) {
+      h2 { font-size: 22px; }
+      p { font-size: 15px; }
+      .timer { font-size: 16px; }
+      button { font-size: 16px; padding: 10px 16px; }
     }
   </style>
 </head>
@@ -112,11 +125,10 @@
 
       if (timeLeft === 0) {
         clearInterval(timer);
-        window.location.href = "demo5.html"; // change if needed
+        window.location.href = "demo5.html";
       }
     }, 1000);
   </script>
 
 </body>
 </html>
-
