@@ -54,7 +54,19 @@ body {
 form { background: rgba(255,255,255,0.32); backdrop-filter: blur(7px); padding: 25px; border-radius: 18px; display: grid; grid-template-columns: 1fr 1fr; gap: 18px; max-height: 90vh; overflow-y: auto; }
 label { font-size: 18px; color: #5c0033; margin-bottom: 4px; display: block; }
 input, select, textarea { width: 100%; padding: 10px 14px; border-radius: 999px; border: none; font-family: 'VT323', monospace; font-size: 18px; outline: none; }
-select { -webkit-appearance: none; appearance: none; }; background-image: linear-gradient(45deg, transparent 50%, #555 50%), linear-gradient(135deg, #555 50%, transparent 50%); background-position: calc(100% - 20px) calc(50% - 3px), calc(100% - 14px) calc(50% - 3px); background-size: 6px 6px; background-repeat: no-repeat; padding-right: 42px; }
+select {
+  -webkit-appearance: none;
+  appearance: none;
+  background-image:
+    linear-gradient(45deg, transparent 50%, #555 50%),
+    linear-gradient(135deg, #555 50%, transparent 50%);
+  background-position:
+    calc(100% - 20px) calc(50% - 3px),
+    calc(100% - 14px) calc(50% - 3px);
+  background-size: 6px 6px;
+  background-repeat: no-repeat;
+  padding-right: 42px;
+}
 textarea { border-radius: 16px; resize: none; height: 70px; overflow-y: auto; } 
 .full { grid-column: span 2; }
 .submit-wrap { grid-column: span 2; display: flex; justify-content: flex-end; }
@@ -199,6 +211,7 @@ button:hover { background: #ff6cc8; }
 
 </body>
 </html>
+
 
 
 
