@@ -117,8 +117,8 @@ button:hover { background: #ff6cc8; }
   </div>
 
   <script>var submitted = false;</script>
-  <iframe name="Hiddenconfirm" style="display:none;"></iframe>
-
+  <iframe name="Hiddenconfirm" style="display:none;" onload="if(submitted) { window.location='submission.html'; }"></iframe>
+  
  <form action="https://docs.google.com/forms/d/e/1FAIpQLSdkZai1mm6Eb5aQ4lPvn4P_RpY69TZdOdEfVQskRKrJP9lzEw/formResponse" method="post" target="Hiddenconfirm" onsubmit="submitted=true">
 
 
@@ -192,5 +192,6 @@ button:hover { background: #ff6cc8; }
 
 </body>
 </html>
+
 
 
