@@ -244,10 +244,10 @@
   </iframe>
 
   <form
-    action="https://docs.google.com/forms/d/e/1FAIpQLSdkZai1mm6Eb5aQ4lPvn4P_RpY69TZdOdEfVQskRKrJP9lzEw/formResponse"
-    method="post"
-    target="Hiddenconfirm"
-    onsubmit="submitted=true">
+  id="consultForm"
+  action="https://docs.google.com/forms/d/e/1FAIpQLSdkZai1mm6Eb5aQ4lPvn4P_RpY69TZdOdEfVQskRKrJP9lzEw/formResponse"
+  method="post"
+  target="Hiddenconfirm">
 
     <div>
       <label>Last name</label>
@@ -323,28 +323,37 @@
     slides[index].classList.add('active');
   }, 6000);
 
-  /* ===== PREVENT DOUBLE SUBMIT ===== */
-  const form = document.querySelector("form");
+
+  /* ===== PREVENT DOUBLE SUBMIT (FIXED) ===== */
+
+  const form = document.getElementById("consultForm");
   const submitBtn = document.getElementById("submitBtn");
 
   let isSubmitting = false;
 
   form.addEventListener("submit", function (e) {
 
+    // Stop normal submit first
+    e.preventDefault();
+
+    // Block if already submitting
     if (isSubmitting) {
-      // If user tries again
-      e.preventDefault();
       alert("Please wait. Your form is still submitting...");
       return;
     }
 
-    // First click
+    // Lock
     isSubmitting = true;
-
     submitBtn.disabled = true;
     submitBtn.textContent = "Submitting...";
 
-    // Re-enable after 5 seconds (failsafe)
+    // Mark submitted (for iframe redirect)
+    submitted = true;
+
+    // Actually submit
+    form.submit();
+
+    // Safety unlock after 5 sec
     setTimeout(() => {
       isSubmitting = false;
       submitBtn.disabled = false;
@@ -357,4 +366,5 @@
 
 </body>
 </html>
+
 
